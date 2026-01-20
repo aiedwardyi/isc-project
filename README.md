@@ -26,4 +26,4 @@ npm run dev
 
 ## Contact
 
-For partnership inquiries: ceo@pyongyangcup.com
+For partnership inquiries: ceo@ngosports.com

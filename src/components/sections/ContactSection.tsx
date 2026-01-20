@@ -39,7 +39,7 @@ const ContactSection = () => {
     {
       icon: Mail,
       title: 'Email',
-      value: 'ceo@pyongyangcup.com',
+      value: 'ceo@ngosports.com',
       delay: 0.2,
       type: 'default',
     },
