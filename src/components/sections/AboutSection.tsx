@@ -84,8 +84,20 @@ const AboutSection = () => {
             {/* Floating Badges with enhanced animation */}
             <motion.div
               initial={{ opacity: 0, scale: 0.5, rotate: -10 }}
-              animate={isInView ? { opacity: 1, scale: 1, rotate: 0 } : {}}
-              transition={{ duration: 0.3, delay: 0.1, type: 'spring', stiffness: 300, damping: 20 }}
+              animate={isInView ? { 
+                opacity: 1, 
+                scale: 1, 
+                rotate: 0,
+                y: [0, -8, 0]
+              } : {}}
+              transition={{ 
+                duration: 0.3, 
+                delay: 0.1, 
+                type: 'spring', 
+                stiffness: 300, 
+                damping: 20,
+                y: { duration: 3, repeat: Infinity, ease: 'easeInOut' }
+              }}
               whileHover={{ scale: 1.1, rotate: 5, transition: { duration: 0.2 } }}
               className="absolute -bottom-6 -right-6 bg-ice p-4 rounded-xl shadow-card w-28"
             >
@@ -99,8 +111,20 @@ const AboutSection = () => {
             {/* Texas Nonprofit Badge */}
             <motion.div
               initial={{ opacity: 0, scale: 0.5, rotate: 10 }}
-              animate={isInView ? { opacity: 1, scale: 1, rotate: 0 } : {}}
-              transition={{ duration: 0.3, delay: 0.15, type: 'spring', stiffness: 300, damping: 20 }}
+              animate={isInView ? { 
+                opacity: 1, 
+                scale: 1, 
+                rotate: 0,
+                y: [0, -6, 0]
+              } : {}}
+              transition={{ 
+                duration: 0.3, 
+                delay: 0.15, 
+                type: 'spring', 
+                stiffness: 300, 
+                damping: 20,
+                y: { duration: 2.5, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }
+              }}
               whileHover={{ scale: 1.1, rotate: -5, transition: { duration: 0.2 } }}
               className="absolute -top-4 -right-4 bg-ice p-4 rounded-xl shadow-card w-28"
             >
