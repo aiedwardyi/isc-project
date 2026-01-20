@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import logoSymbol from '@/assets/logo-symbol.png';
 import unLogo from '@/assets/un-logo.png';
+import texasLogo from '@/assets/texas-logo.png';
 
 const Footer = () => {
   return (
@@ -33,16 +34,22 @@ const Footer = () => {
           {/* Divider */}
           <div className="w-24 h-px bg-gradient-to-r from-transparent via-ice/30 to-transparent mb-8" />
 
-          {/* UNGM Badge with UN Logo */}
+          {/* Registration Badges */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.15 }}
             viewport={{ once: true }}
-            className="flex items-center gap-3 mb-6 px-4 py-2 rounded-full bg-ice/10 border border-ice/20"
+            className="flex flex-wrap items-center justify-center gap-4 mb-6"
           >
-            <img src={unLogo} alt="United Nations" className="w-6 h-6 object-contain" />
-            <span className="text-ice/80 text-sm font-medium">UNGM Registered Implementing Partner</span>
+            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-ice/10 border border-ice/20">
+              <img src={unLogo} alt="United Nations" className="w-5 h-5 object-contain" />
+              <span className="text-ice/80 text-sm font-medium">UN Implementing Partner #5048</span>
+            </div>
+            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-ice/10 border border-ice/20">
+              <img src={texasLogo} alt="Texas Secretary of State" className="w-5 h-5 object-contain" />
+              <span className="text-ice/80 text-sm font-medium">TX Nonprofit #806374700</span>
+            </div>
           </motion.div>
 
           {/* Copyright */}

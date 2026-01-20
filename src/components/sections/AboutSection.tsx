@@ -3,6 +3,7 @@ import { useRef } from 'react';
 import { Globe, Users, Target, Heart } from 'lucide-react';
 import unityImage from '@/assets/unity-athletes.jpg';
 import unLogo from '@/assets/un-logo.png';
+import texasLogo from '@/assets/texas-logo.png';
 
 const AboutSection = () => {
   const ref = useRef(null);
@@ -80,18 +81,33 @@ const AboutSection = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent" />
             </motion.div>
             
-            {/* Floating Badge with enhanced animation */}
+            {/* Floating Badges with enhanced animation */}
             <motion.div
               initial={{ opacity: 0, scale: 0.5, rotate: -10 }}
               animate={isInView ? { opacity: 1, scale: 1, rotate: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.5, type: 'spring', bounce: 0.4 }}
               whileHover={{ scale: 1.1, rotate: 5 }}
-              className="absolute -bottom-6 -right-6 bg-ice p-5 rounded-xl shadow-card"
+              className="absolute -bottom-6 -right-6 bg-ice p-4 rounded-xl shadow-card"
             >
               <div className="text-center flex flex-col items-center">
-                <img src={unLogo} alt="United Nations" className="w-10 h-10 object-contain mb-2" />
-                <p className="text-navy font-display text-2xl">UNGM</p>
-                <p className="text-navy/70 text-xs font-medium">Registered</p>
+                <img src={unLogo} alt="United Nations" className="w-8 h-8 object-contain mb-1" />
+                <p className="text-navy font-display text-lg">UN Partner</p>
+                <p className="text-navy/70 text-xs font-medium">#5048</p>
+              </div>
+            </motion.div>
+            
+            {/* Texas Nonprofit Badge */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.5, rotate: 10 }}
+              animate={isInView ? { opacity: 1, scale: 1, rotate: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.7, type: 'spring', bounce: 0.4 }}
+              whileHover={{ scale: 1.1, rotate: -5 }}
+              className="absolute -top-4 -right-4 bg-ice p-4 rounded-xl shadow-card"
+            >
+              <div className="text-center flex flex-col items-center">
+                <img src={texasLogo} alt="Texas Secretary of State" className="w-8 h-8 object-contain mb-1" />
+                <p className="text-navy font-display text-xs">TX Nonprofit</p>
+                <p className="text-navy/70 text-xs font-medium">#806374700</p>
               </div>
             </motion.div>
           </motion.div>
