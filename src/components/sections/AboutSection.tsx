@@ -88,7 +88,12 @@ const AboutSection = () => {
                 opacity: 1, 
                 scale: 1, 
                 rotate: 0,
-                y: [0, -8, 0]
+                y: [0, -8, 0],
+                boxShadow: [
+                  '0 4px 20px rgba(59, 130, 246, 0.2)',
+                  '0 4px 30px rgba(59, 130, 246, 0.4)',
+                  '0 4px 20px rgba(59, 130, 246, 0.2)'
+                ]
               } : {}}
               transition={{ 
                 duration: 0.3, 
@@ -96,10 +101,11 @@ const AboutSection = () => {
                 type: 'spring', 
                 stiffness: 300, 
                 damping: 20,
-                y: { duration: 3, repeat: Infinity, ease: 'easeInOut' }
+                y: { duration: 3, repeat: Infinity, ease: 'easeInOut' },
+                boxShadow: { duration: 2, repeat: Infinity, ease: 'easeInOut' }
               }}
               whileHover={{ scale: 1.1, rotate: 5, transition: { duration: 0.2 } }}
-              className="absolute -bottom-6 -right-6 bg-ice p-4 rounded-xl shadow-card w-28"
+              className="absolute -bottom-6 -right-6 bg-ice p-4 rounded-xl w-28"
             >
               <div className="text-center flex flex-col items-center">
                 <img src={unLogo} alt="United Nations" className="w-8 h-8 object-contain mb-1" />
@@ -115,7 +121,12 @@ const AboutSection = () => {
                 opacity: 1, 
                 scale: 1, 
                 rotate: 0,
-                y: [0, -6, 0]
+                y: [0, -6, 0],
+                boxShadow: [
+                  '0 4px 20px rgba(59, 130, 246, 0.2)',
+                  '0 4px 30px rgba(59, 130, 246, 0.4)',
+                  '0 4px 20px rgba(59, 130, 246, 0.2)'
+                ]
               } : {}}
               transition={{ 
                 duration: 0.3, 
@@ -123,10 +134,11 @@ const AboutSection = () => {
                 type: 'spring', 
                 stiffness: 300, 
                 damping: 20,
-                y: { duration: 2.5, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }
+                y: { duration: 2.5, repeat: Infinity, ease: 'easeInOut', delay: 0.5 },
+                boxShadow: { duration: 2.5, repeat: Infinity, ease: 'easeInOut', delay: 0.3 }
               }}
               whileHover={{ scale: 1.1, rotate: -5, transition: { duration: 0.2 } }}
-              className="absolute -top-4 -right-4 bg-ice p-4 rounded-xl shadow-card w-28"
+              className="absolute -top-4 -right-4 bg-ice p-4 rounded-xl w-28"
             >
               <div className="text-center flex flex-col items-center">
                 <img src={texasLogo} alt="Texas Secretary of State" className="w-8 h-8 object-contain mb-1" />
