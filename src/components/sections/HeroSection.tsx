@@ -98,7 +98,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="mb-6"
+          className="mb-6 mt-8"
         >
           <span className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-ice/10 backdrop-blur-sm border border-ice/20 text-ice text-sm font-medium tracking-wider uppercase">
             <img src={unLogo} alt="United Nations" className="w-6 h-6 object-contain" />
