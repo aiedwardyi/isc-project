@@ -87,11 +87,11 @@ const AboutSection = () => {
               animate={isInView ? { opacity: 1, scale: 1, rotate: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.5, type: 'spring', bounce: 0.4 }}
               whileHover={{ scale: 1.1, rotate: 5 }}
-              className="absolute -bottom-6 -right-6 bg-ice p-4 rounded-xl shadow-card"
+              className="absolute -bottom-6 -right-6 bg-ice p-4 rounded-xl shadow-card w-28"
             >
               <div className="text-center flex flex-col items-center">
                 <img src={unLogo} alt="United Nations" className="w-8 h-8 object-contain mb-1" />
-                <p className="text-navy font-display text-lg">UN Partner</p>
+                <p className="text-navy font-display text-sm">UN Partner</p>
                 <p className="text-navy/70 text-xs font-medium">#5048</p>
               </div>
             </motion.div>
@@ -102,11 +102,11 @@ const AboutSection = () => {
               animate={isInView ? { opacity: 1, scale: 1, rotate: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.7, type: 'spring', bounce: 0.4 }}
               whileHover={{ scale: 1.1, rotate: -5 }}
-              className="absolute -top-4 -right-4 bg-ice p-4 rounded-xl shadow-card"
+              className="absolute -top-4 -right-4 bg-ice p-4 rounded-xl shadow-card w-28"
             >
               <div className="text-center flex flex-col items-center">
                 <img src={texasLogo} alt="Texas Secretary of State" className="w-8 h-8 object-contain mb-1" />
-                <p className="text-navy font-display text-lg">TX Nonprofit</p>
+                <p className="text-navy font-display text-sm">TX Nonprofit</p>
                 <p className="text-navy/70 text-xs font-medium">#806374700</p>
               </div>
             </motion.div>
