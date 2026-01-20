@@ -124,7 +124,7 @@ const HeroSection = () => {
         >
           <span className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-ice/10 backdrop-blur-sm border border-ice/20 text-ice text-sm font-medium tracking-wider uppercase">
             <img src={unLogo} alt="United Nations" className="w-6 h-6 object-contain" />
-            UNGM Registered • Implementing Partner
+            UN Implementing Partner #5048
           </span>
         </motion.div>
 
