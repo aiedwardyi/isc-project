@@ -1,6 +1,7 @@
 import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
-import { Mail, MapPin, Globe } from 'lucide-react';
+import { Mail, MapPin } from 'lucide-react';
+import unLogo from '@/assets/un-logo.png';
 
 const ContactSection = () => {
   const ref = useRef(null);
@@ -39,18 +40,21 @@ const ContactSection = () => {
       title: 'Email',
       value: 'info@ngo-isc.org',
       delay: 0.2,
+      isUn: false,
     },
     {
       icon: MapPin,
       title: 'Location',
       value: 'United States',
       delay: 0.3,
+      isUn: false,
     },
     {
-      icon: Globe,
+      icon: null,
       title: 'Global Reach',
       value: 'UNGM Registered',
       delay: 0.4,
+      isUn: true,
     },
   ];
 
@@ -143,14 +147,18 @@ const ContactSection = () => {
               >
                 <motion.div 
                   className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-sky/10 group-hover:bg-sky/20 transition-colors mb-4"
-                  whileHover={{ rotate: 360 }}
+                  whileHover={{ rotate: contact.isUn ? 0 : 360 }}
                   transition={{ duration: 0.6 }}
                 >
                   <motion.div
                     animate={{ y: [0, -3, 0] }}
                     transition={{ duration: 2, repeat: Infinity, delay: index * 0.3 }}
                   >
-                    <contact.icon className="w-7 h-7 text-sky" />
+                    {contact.isUn ? (
+                      <img src={unLogo} alt="United Nations" className="w-8 h-8 object-contain" />
+                    ) : (
+                      contact.icon && <contact.icon className="w-7 h-7 text-sky" />
+                    )}
                   </motion.div>
                 </motion.div>
                 <h3 className="font-display text-xl text-navy mb-2">{contact.title}</h3>

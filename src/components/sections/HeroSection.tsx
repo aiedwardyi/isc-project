@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { ChevronDown } from 'lucide-react';
 import heroImage from '@/assets/hero-stadium.jpg';
 import heroVideo from '@/assets/hero-video.mp4';
+import unLogo from '@/assets/un-logo.png';
 import { useRef, useState } from 'react';
 
 const HeroSection = () => {
@@ -121,7 +122,8 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="mb-6"
         >
-          <span className="inline-block px-4 py-2 rounded-full bg-ice/10 backdrop-blur-sm border border-ice/20 text-ice text-sm font-medium tracking-wider uppercase">
+          <span className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-ice/10 backdrop-blur-sm border border-ice/20 text-ice text-sm font-medium tracking-wider uppercase">
+            <img src={unLogo} alt="United Nations" className="w-6 h-6 object-contain" />
             UNGM Registered • Implementing Partner
           </span>
         </motion.div>

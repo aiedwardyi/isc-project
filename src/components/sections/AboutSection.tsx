@@ -2,6 +2,7 @@ import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Globe, Users, Target, Heart } from 'lucide-react';
 import unityImage from '@/assets/unity-athletes.jpg';
+import unLogo from '@/assets/un-logo.png';
 
 const AboutSection = () => {
   const ref = useRef(null);
@@ -85,11 +86,12 @@ const AboutSection = () => {
               animate={isInView ? { opacity: 1, scale: 1, rotate: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.5, type: 'spring', bounce: 0.4 }}
               whileHover={{ scale: 1.1, rotate: 5 }}
-              className="absolute -bottom-6 -right-6 bg-ice p-6 rounded-xl shadow-card"
+              className="absolute -bottom-6 -right-6 bg-ice p-5 rounded-xl shadow-card"
             >
-              <div className="text-center">
-                <p className="text-navy font-display text-4xl">UNGM</p>
-                <p className="text-navy/70 text-sm font-medium">Registered</p>
+              <div className="text-center flex flex-col items-center">
+                <img src={unLogo} alt="United Nations" className="w-10 h-10 object-contain mb-2" />
+                <p className="text-navy font-display text-2xl">UNGM</p>
+                <p className="text-navy/70 text-xs font-medium">Registered</p>
               </div>
             </motion.div>
           </motion.div>
