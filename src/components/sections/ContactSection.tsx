@@ -39,7 +39,7 @@ const ContactSection = () => {
     {
       icon: Mail,
       title: 'Email',
-      value: 'info@ngo-isc.org',
+      value: 'ceo@pyongyangcup.com',
       delay: 0.2,
       type: 'default',
     },
@@ -155,7 +155,7 @@ const ContactSection = () => {
               >
                 <motion.div 
                   className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-sky/10 group-hover:bg-sky/20 transition-colors mb-4"
-                  whileHover={{ rotate: contact.type === 'default' ? 360 : 0 }}
+                  whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.6 }}
                 >
                   <motion.div
