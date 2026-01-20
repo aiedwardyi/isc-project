@@ -85,8 +85,8 @@ const AboutSection = () => {
             <motion.div
               initial={{ opacity: 0, scale: 0.5, rotate: -10 }}
               animate={isInView ? { opacity: 1, scale: 1, rotate: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.5, type: 'spring', bounce: 0.4 }}
-              whileHover={{ scale: 1.1, rotate: 5 }}
+              transition={{ duration: 0.3, delay: 0.1, type: 'spring', stiffness: 300, damping: 20 }}
+              whileHover={{ scale: 1.1, rotate: 5, transition: { duration: 0.2 } }}
               className="absolute -bottom-6 -right-6 bg-ice p-4 rounded-xl shadow-card w-28"
             >
               <div className="text-center flex flex-col items-center">
@@ -100,8 +100,8 @@ const AboutSection = () => {
             <motion.div
               initial={{ opacity: 0, scale: 0.5, rotate: 10 }}
               animate={isInView ? { opacity: 1, scale: 1, rotate: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.7, type: 'spring', bounce: 0.4 }}
-              whileHover={{ scale: 1.1, rotate: -5 }}
+              transition={{ duration: 0.3, delay: 0.15, type: 'spring', stiffness: 300, damping: 20 }}
+              whileHover={{ scale: 1.1, rotate: -5, transition: { duration: 0.2 } }}
               className="absolute -top-4 -right-4 bg-ice p-4 rounded-xl shadow-card w-28"
             >
               <div className="text-center flex flex-col items-center">
