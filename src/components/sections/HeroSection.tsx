@@ -2,10 +2,13 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { ChevronDown } from 'lucide-react';
 import heroImage from '@/assets/hero-stadium.jpg';
-import { useRef } from 'react';
+import heroVideo from '@/assets/hero-video.mp4';
+import { useRef, useState } from 'react';
 
 const HeroSection = () => {
   const ref = useRef(null);
+  const [videoLoaded, setVideoLoaded] = useState(false);
+  
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start start', 'end start'],
@@ -23,17 +26,42 @@ const HeroSection = () => {
 
   return (
     <section ref={ref} className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Parallax Background Image */}
+      {/* Fallback Background Image (shows while video loads) */}
       <motion.div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-110"
         style={{ 
           backgroundImage: `url(${heroImage})`,
           y: backgroundY,
+          opacity: videoLoaded ? 0 : 1,
         }}
       />
       
+      {/* Video Background */}
+      <motion.div 
+        className="absolute inset-0 scale-110"
+        style={{ y: backgroundY }}
+      >
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          onLoadedData={() => setVideoLoaded(true)}
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+            videoLoaded ? 'opacity-100' : 'opacity-0'
+          }`}
+        >
+          <source src={heroVideo} type="video/mp4" />
+        </video>
+      </motion.div>
+      
       {/* Overlay Gradient */}
       <div className="absolute inset-0 bg-overlay-gradient" />
+      
+      {/* Cinematic Vignette Effect */}
+      <div className="absolute inset-0 pointer-events-none" style={{
+        background: 'radial-gradient(ellipse at center, transparent 0%, rgba(10, 25, 47, 0.4) 100%)'
+      }} />
       
       {/* Animated Particles/Lines Effect */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
