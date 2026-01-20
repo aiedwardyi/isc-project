@@ -110,7 +110,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="font-display text-6xl md:text-8xl lg:text-9xl text-ice tracking-wide mb-6"
+          className="font-display text-[11vw] sm:text-6xl md:text-8xl lg:text-9xl text-ice tracking-wide mb-6"
         >
           <motion.span
             initial={{ opacity: 0, x: -50 }}
