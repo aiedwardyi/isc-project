@@ -106,7 +106,7 @@ const AboutSection = () => {
             >
               <div className="text-center flex flex-col items-center">
                 <img src={texasLogo} alt="Texas Secretary of State" className="w-8 h-8 object-contain mb-1" />
-                <p className="text-navy font-display text-xs">TX Nonprofit</p>
+                <p className="text-navy font-display text-lg">TX Nonprofit</p>
                 <p className="text-navy/70 text-xs font-medium">#806374700</p>
               </div>
             </motion.div>
