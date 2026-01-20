@@ -64,30 +64,8 @@ const HeroSection = () => {
         background: 'radial-gradient(ellipse at center, transparent 0%, rgba(10, 25, 47, 0.4) 100%)'
       }} />
       
-      {/* Animated Particles/Lines Effect */}
+      {/* Floating orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(8)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute h-px bg-gradient-to-r from-transparent via-sky/40 to-transparent"
-            style={{
-              width: '200%',
-              top: `${10 + i * 12}%`,
-              left: '-50%',
-            }}
-            animate={{
-              x: ['-50%', '50%'],
-            }}
-            transition={{
-              duration: 12 + i * 3,
-              repeat: Infinity,
-              ease: 'linear',
-              delay: i * 0.8,
-            }}
-          />
-        ))}
-        
-        {/* Floating orbs */}
         {[...Array(5)].map((_, i) => (
           <motion.div
             key={`orb-${i}`}
