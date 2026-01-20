@@ -16,6 +16,7 @@ const MissionSection = () => {
   const pathY = useTransform(scrollYProgress, [0, 1], [0, 200]);
   const leftCardX = useTransform(scrollYProgress, [0, 0.5, 1], [-50, 0, 50]);
   const rightCardX = useTransform(scrollYProgress, [0, 0.5, 1], [50, 0, -50]);
+  const ceoCardY = useTransform(scrollYProgress, [0, 0.5, 1], [30, 0, -30]);
 
   return (
     <section ref={containerRef} className="relative py-24 lg:py-32 bg-navy-gradient overflow-hidden">
@@ -142,12 +143,29 @@ const MissionSection = () => {
 
         {/* CEO Leadership Section */}
         <motion.div
-          initial={{ opacity: 0, y: 60 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          style={{ y: ceoCardY }}
+          initial={{ opacity: 0, y: 60, rotateX: -15 }}
+          animate={isInView ? { opacity: 1, y: 0, rotateX: 0 } : {}}
           transition={{ duration: 1, delay: 0.4, ease: 'easeOut' }}
-          className="mt-16 lg:mt-24"
+          className="mt-16 lg:mt-24 relative"
         >
-          <div className="relative bg-ice/5 backdrop-blur-sm border border-ice/10 rounded-2xl p-8 lg:p-12 overflow-hidden">
+          {/* Background glow orbs like mission/vision cards */}
+          <motion.div 
+            className="absolute -top-4 -left-4 w-24 h-24 bg-sky/20 rounded-full blur-xl"
+            animate={{ scale: [1, 1.3, 1], opacity: [0.5, 0.8, 0.5] }}
+            transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
+          />
+          <motion.div 
+            className="absolute -bottom-4 -right-4 w-24 h-24 bg-gold/20 rounded-full blur-xl"
+            animate={{ scale: [1, 1.3, 1], opacity: [0.5, 0.8, 0.5] }}
+            transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 3 }}
+          />
+          
+          <motion.div 
+            className="relative bg-ice/5 backdrop-blur-sm border border-ice/10 rounded-2xl p-8 lg:p-12 overflow-hidden"
+            whileHover={{ scale: 1.01, borderColor: 'hsl(var(--sky) / 0.3)' }}
+            transition={{ duration: 0.3 }}
+          >
             {/* Background glow */}
             <motion.div 
               className="absolute top-1/2 left-1/4 w-64 h-64 bg-sky/10 rounded-full blur-3xl -translate-y-1/2"
@@ -170,7 +188,7 @@ const MissionSection = () => {
                   />
                   <img
                     src={ceoImage}
-                    alt="CEO of NGO International Sports Committee"
+                    alt="Edward Yi - CEO of NGO International Sports Committee"
                     className="relative w-48 h-48 lg:w-56 lg:h-56 object-cover rounded-2xl border-2 border-ice/20"
                   />
                 </div>
@@ -186,17 +204,20 @@ const MissionSection = () => {
                 >
                   Leadership
                 </motion.p>
-                <h3 className="font-display text-3xl md:text-4xl text-ice mb-3">
-                  CHIEF EXECUTIVE OFFICER
+                <h3 className="font-display text-3xl md:text-4xl text-ice mb-1">
+                  EDWARD YI
                 </h3>
+                <p className="text-gold font-medium text-lg mb-4">
+                  Chief Executive Officer
+                </p>
                 <p className="text-ice/80 text-lg leading-relaxed max-w-2xl">
                   Leading our mission to unite nations through the power of sports, 
-                  our CEO brings decades of experience in international diplomacy 
+                  Edward brings decades of experience in international diplomacy 
                   and sports management to advance global peace initiatives.
                 </p>
               </div>
             </div>
-          </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>
