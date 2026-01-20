@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import logoSymbol from '@/assets/logo-symbol.png';
 import unLogo from '@/assets/un-logo.png';
-import texasLogo from '@/assets/texas-logo.png';
+import texasLogoWhite from '@/assets/texas-logo-white.png';
 
 const Footer = () => {
   return (
@@ -47,7 +47,7 @@ const Footer = () => {
               <span className="text-ice/80 text-sm font-medium">UN Implementing Partner #5048</span>
             </div>
             <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-ice/10 border border-ice/20">
-              <img src={texasLogo} alt="Texas Secretary of State" className="w-5 h-5 object-contain" />
+              <img src={texasLogoWhite} alt="Texas Secretary of State" className="w-5 h-5 object-contain" />
               <span className="text-ice/80 text-sm font-medium">TX Nonprofit #806374700</span>
             </div>
           </motion.div>
