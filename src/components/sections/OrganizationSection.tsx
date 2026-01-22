@@ -19,7 +19,7 @@ const divisions = [
   },
   {
     title: 'Finance & Sponsorship Division',
-    leader: '',
+    leader: 'David Hersavec',
     icon: DollarSign,
     responsibilities: ['Investment Management', 'Sponsorship Contracts', 'Central Accounting & Audit'],
   },
@@ -38,12 +38,11 @@ const divisions = [
 ];
 
 const supportOffices = [
-  { name: 'China Support Office', flag: '🇨🇳' },
-  { name: 'China Support Office', flag: '🇨🇳' },
-  { name: 'Japan Support Office', flag: '🇯🇵' },
-  { name: 'Russia Support Office', flag: '🇷🇺' },
-  { name: 'Europe Support Office', flag: '🇪🇺' },
-  { name: 'Other National Support Offices', flag: '🌍' },
+  { name: 'China Support Office', code: 'CN' },
+  { name: 'Japan Support Office', code: 'JP' },
+  { name: 'Russia Support Office', code: 'RU' },
+  { name: 'Europe Support Office', code: 'EU' },
+  { name: 'Other National Support Offices', code: '🌍' },
 ];
 
 const OrganizationSection = () => {
@@ -319,7 +318,7 @@ const OrganizationSection = () => {
                   whileHover={{ scale: 1.05 }}
                   className="bg-ice/5 backdrop-blur-sm border border-ice/10 rounded-lg p-4 text-center hover:border-sky/30 hover:bg-ice/10 transition-all duration-300"
                 >
-                  <span className="text-2xl mb-2 block">{office.flag}</span>
+                  <span className="text-xl mb-2 block text-ice font-display">{office.code}</span>
                   <p className="text-ice text-xs font-medium">{office.name}</p>
                 </motion.div>
               ))}
