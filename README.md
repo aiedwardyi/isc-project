@@ -4,7 +4,7 @@ A UNGM-registered nonprofit organization promoting global peace and unity throug
 
 ## About ISC
 
-The International Sports Committee (ISC) organizes international sporting events that bridge cultures, foster diplomacy, and build lasting connections between nations. As a registered implementing partner with UNGM and a Texas nonprofit, we work to create meaningful impact through sports.
+The NGO International Sports Committee (ISC) organizes international sporting events that bridge cultures, foster diplomacy, and build lasting connections between nations. As a registered implementing partner with UNGM and a Texas nonprofit, we work to create meaningful impact through sports.
 
 ## Technologies
 
