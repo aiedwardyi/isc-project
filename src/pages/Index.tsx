@@ -3,6 +3,7 @@ import Footer from '@/components/layout/Footer';
 import HeroSection from '@/components/sections/HeroSection';
 import AboutSection from '@/components/sections/AboutSection';
 import MissionSection from '@/components/sections/MissionSection';
+import OrganizationSection from '@/components/sections/OrganizationSection';
 import ValuesSection from '@/components/sections/ValuesSection';
 import WhatWeDoSection from '@/components/sections/WhatWeDoSection';
 import ProcessSection from '@/components/sections/ProcessSection';
@@ -18,8 +19,8 @@ const Index = () => {
         <HeroSection />
         <AboutSection />
         <MissionSection />
+        <OrganizationSection />
         <ValuesSection />
-        <WhatWeDoSection />
         <ProcessSection />
         <PartnersSection />
         <PartnerWithUsSection />
