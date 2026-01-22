@@ -82,7 +82,10 @@ const AboutSection = () => {
             </motion.div>
             
             {/* Floating Badges with enhanced animation */}
-            <motion.div
+            <motion.a
+              href="/UN-Certificate.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, scale: 0.5, rotate: -10 }}
               animate={isInView ? { 
                 opacity: 1, 
@@ -105,17 +108,20 @@ const AboutSection = () => {
                 boxShadow: { duration: 2, repeat: Infinity, ease: 'easeInOut' }
               }}
               whileHover={{ scale: 1.1, rotate: 5, transition: { duration: 0.2 } }}
-              className="absolute -bottom-6 -right-6 bg-ice p-4 rounded-xl w-28"
+              className="absolute -bottom-6 -right-6 bg-ice p-4 rounded-xl w-28 cursor-pointer"
             >
               <div className="text-center flex flex-col items-center">
                 <img src={unLogo} alt="United Nations" className="w-8 h-8 object-contain mb-1" />
                 <p className="text-navy font-display text-sm">UN Partner</p>
                 <p className="text-navy/70 text-xs font-medium">#5048</p>
               </div>
-            </motion.div>
+            </motion.a>
             
             {/* Texas Nonprofit Badge */}
-            <motion.div
+            <motion.a
+              href="/TX-State-Certificate.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, scale: 0.5, rotate: 10 }}
               animate={isInView ? { 
                 opacity: 1, 
@@ -138,14 +144,14 @@ const AboutSection = () => {
                 boxShadow: { duration: 2.5, repeat: Infinity, ease: 'easeInOut', delay: 0.3 }
               }}
               whileHover={{ scale: 1.1, rotate: -5, transition: { duration: 0.2 } }}
-              className="absolute -top-4 -right-4 bg-ice p-4 rounded-xl w-28"
+              className="absolute -top-4 -right-4 bg-ice p-4 rounded-xl w-28 cursor-pointer"
             >
               <div className="text-center flex flex-col items-center">
                 <img src={texasLogo} alt="Texas Secretary of State" className="w-8 h-8 object-contain mb-1" />
                 <p className="text-navy font-display text-sm">TX Nonprofit</p>
                 <p className="text-navy/70 text-xs font-medium">#806374700</p>
               </div>
-            </motion.div>
+            </motion.a>
           </motion.div>
 
           {/* Content Side with Parallax */}

@@ -42,14 +42,24 @@ const Footer = () => {
             viewport={{ once: true }}
             className="flex flex-wrap items-center justify-center gap-4 mb-6"
           >
-            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-ice/10 border border-ice/20">
+            <a 
+              href="/UN-Certificate.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-4 py-2 rounded-full bg-ice/10 border border-ice/20 hover:bg-ice/20 transition-colors cursor-pointer"
+            >
               <img src={unLogo} alt="United Nations" className="w-5 h-5 object-contain" />
               <span className="text-ice/80 text-sm font-medium">UN Implementing Partner #5048</span>
-            </div>
-            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-ice/10 border border-ice/20">
+            </a>
+            <a 
+              href="/TX-State-Certificate.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-4 py-2 rounded-full bg-ice/10 border border-ice/20 hover:bg-ice/20 transition-colors cursor-pointer"
+            >
               <img src={texasLogoWhite} alt="Texas Secretary of State" className="w-5 h-5 object-contain" />
               <span className="text-ice/80 text-sm font-medium">TX Nonprofit #806374700</span>
-            </div>
+            </a>
           </motion.div>
 
           {/* Copyright */}
