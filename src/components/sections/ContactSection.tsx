@@ -142,39 +142,52 @@ const ContactSection = () => {
             initial="hidden"
             animate={isInView ? 'visible' : 'hidden'}
           >
-            {contacts.map((contact, index) => (
-              <motion.div
-                key={contact.title}
-                variants={cardVariants}
-                whileHover={{ 
-                  scale: 1.05, 
-                  y: -10,
-                  boxShadow: '0 20px 40px -10px hsl(var(--sky) / 0.2)',
-                }}
-                className="p-6 rounded-2xl bg-card border border-border hover:border-sky/30 transition-all duration-300 group"
-              >
-                <motion.div 
-                  className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-sky/10 group-hover:bg-sky/20 transition-colors mb-4"
-                  whileHover={{ rotate: 360 }}
-                  transition={{ duration: 0.6 }}
+            {contacts.map((contact, index) => {
+              const isClickable = contact.type === 'un' || contact.type === 'texas';
+              const pdfUrl = contact.type === 'un' ? '/UN-Certificate.pdf' : contact.type === 'texas' ? '/TX-State-Certificate.pdf' : undefined;
+              
+              const CardWrapper = isClickable ? motion.a : motion.div;
+              const wrapperProps = isClickable ? {
+                href: pdfUrl,
+                target: '_blank',
+                rel: 'noopener noreferrer',
+              } : {};
+
+              return (
+                <CardWrapper
+                  key={contact.title}
+                  {...wrapperProps}
+                  variants={cardVariants}
+                  whileHover={{ 
+                    scale: 1.05, 
+                    y: -10,
+                    boxShadow: '0 20px 40px -10px hsl(var(--sky) / 0.2)',
+                  }}
+                  className={`p-6 rounded-2xl bg-card border border-border hover:border-sky/30 transition-all duration-300 group ${isClickable ? 'cursor-pointer' : ''}`}
                 >
-                  <motion.div
-                    animate={{ y: [0, -3, 0] }}
-                    transition={{ duration: 2, repeat: Infinity, delay: index * 0.3 }}
+                  <motion.div 
+                    className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-sky/10 group-hover:bg-sky/20 transition-colors mb-4"
+                    whileHover={{ rotate: 360 }}
+                    transition={{ duration: 0.6 }}
                   >
-                    {contact.type === 'un' ? (
-                      <img src={unLogo} alt="United Nations" className="w-8 h-8 object-contain" />
-                    ) : contact.type === 'texas' ? (
-                      <img src={texasLogo} alt="Texas Secretary of State" className="w-8 h-8 object-contain" />
-                    ) : (
-                      contact.icon && <contact.icon className="w-7 h-7 text-sky" />
-                    )}
+                    <motion.div
+                      animate={{ y: [0, -3, 0] }}
+                      transition={{ duration: 2, repeat: Infinity, delay: index * 0.3 }}
+                    >
+                      {contact.type === 'un' ? (
+                        <img src={unLogo} alt="United Nations" className="w-8 h-8 object-contain" />
+                      ) : contact.type === 'texas' ? (
+                        <img src={texasLogo} alt="Texas Secretary of State" className="w-8 h-8 object-contain" />
+                      ) : (
+                        contact.icon && <contact.icon className="w-7 h-7 text-sky" />
+                      )}
+                    </motion.div>
                   </motion.div>
-                </motion.div>
-                <h3 className="font-display text-xl text-navy mb-2">{contact.title}</h3>
-                <p className="text-muted-foreground text-sm">{contact.value}</p>
-              </motion.div>
-            ))}
+                  <h3 className="font-display text-xl text-navy mb-2">{contact.title}</h3>
+                  <p className="text-muted-foreground text-sm">{contact.value}</p>
+                </CardWrapper>
+              );
+            })}
           </motion.div>
         </motion.div>
       </div>
