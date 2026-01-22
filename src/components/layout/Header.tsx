@@ -6,7 +6,7 @@ import logoHeader from '@/assets/logo-header.png';
 
 const navItems = [
   { label: 'About', href: '#about' },
-  { label: 'Services', href: '#services' },
+  { label: 'Organization', href: '#organization' },
   { label: 'Partners', href: '#partner' },
   { label: 'Contact', href: '#contact' },
 ];
