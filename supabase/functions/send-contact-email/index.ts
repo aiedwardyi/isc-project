@@ -58,7 +58,7 @@ const handler = async (req: Request): Promise<Response> => {
     });
 
     const emailResponse = await resend.emails.send({
-      from: "NGO Sports Contact Form <onboarding@resend.dev>",
+      from: "NGO Sports <noreply@ngosports.com>",
       to: ["ceo@ngosports.com"],
       reply_to: email,
       subject: `New Contact Form Submission from ${name}`,
