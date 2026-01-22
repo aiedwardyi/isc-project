@@ -91,7 +91,7 @@ const OrganizationSection = () => {
     <section
       ref={containerRef}
       id="organization"
-      className="relative py-24 md:py-32 overflow-hidden bg-gradient-to-b from-navy via-navy/95 to-navy"
+      className="relative py-16 md:py-20 overflow-hidden bg-gradient-to-b from-navy via-navy/95 to-navy"
     >
       {/* Animated Background Grid */}
       <motion.div
@@ -158,9 +158,9 @@ const OrganizationSection = () => {
           {/* Top Logo & Title */}
           <motion.div variants={cardVariants} className="text-center mb-8">
             <div className="inline-flex items-center gap-4 mb-4">
-              <img src={logoSymbol} alt="ISC Logo" className="h-16 w-auto" />
+              <img src={logoSymbol} alt="NGO Logo" className="h-16 w-auto" />
               <div className="text-left">
-                <h3 className="font-display text-2xl md:text-3xl text-ice">ISC</h3>
+                <h3 className="font-display text-2xl md:text-3xl text-ice">NGO</h3>
                 <p className="text-ice/60 text-sm">International Sports Committee</p>
               </div>
             </div>
