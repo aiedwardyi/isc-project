@@ -310,13 +310,13 @@ const OrganizationSection = () => {
             </div>
 
             {/* Support Office Cards */}
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+            <div className="flex flex-wrap justify-center gap-3">
               {supportOffices.map((office, index) => (
                 <motion.div
                   key={index}
                   variants={cardVariants}
                   whileHover={{ scale: 1.05 }}
-                  className="bg-ice/5 backdrop-blur-sm border border-ice/10 rounded-lg p-4 text-center hover:border-sky/30 hover:bg-ice/10 transition-all duration-300"
+                  className="bg-ice/5 backdrop-blur-sm border border-ice/10 rounded-lg p-4 text-center hover:border-sky/30 hover:bg-ice/10 transition-all duration-300 w-40 md:w-44"
                 >
                   <span className="text-xl mb-2 block text-ice font-display">{office.code}</span>
                   <p className="text-ice text-xs font-medium">{office.name}</p>
