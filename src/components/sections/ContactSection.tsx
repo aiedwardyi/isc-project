@@ -59,7 +59,7 @@ const ContactSection = () => {
     {
       icon: MapPin,
       title: 'Location',
-      value: 'United States',
+      value: 'Austin, TX, USA',
       delay: 0.3,
       type: 'default',
     },
