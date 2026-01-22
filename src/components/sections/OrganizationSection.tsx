@@ -18,32 +18,32 @@ const divisions = [
     responsibilities: ['Legal Affairs', 'Ethics & Risk Control', 'Compliance Officer (N/Firm)'],
   },
   {
-    title: 'Finance & Admin Office',
-    leader: 'John Miller',
+    title: 'Finance & Sponsorship Division',
+    leader: '',
     icon: DollarSign,
-    responsibilities: ['Accounting, Financial Planning', 'Budget/Travel/Human Resource', 'Donation Management'],
+    responsibilities: ['Investment Management', 'Sponsorship Contracts', 'Central Accounting & Audit'],
   },
   {
-    title: 'Programs & Operation Office',
-    leader: 'Edward Yi',
+    title: 'Tournament & Operations',
+    leader: 'John Miller',
     icon: Trophy,
-    responsibilities: ['Sports & Culture Activities', 'Youth Programs', 'Community Engagement'],
+    responsibilities: ['Competition Planning', 'Logistics & Security Coordination', 'International Match Operations'],
   },
   {
-    title: 'Public & Media Relations Office',
+    title: 'Media Division',
     leader: 'Sarah Williams',
     icon: Megaphone,
-    responsibilities: ['Social/Press/Media Relations', 'Communications/Content Creators', 'Marketing/Public Engagement'],
+    responsibilities: ['Global Media Relations', 'Official Statements & Press', 'Branding & Messaging Control'],
   },
 ];
 
 const supportOffices = [
-  { name: 'Korea', flag: '🇰🇷' },
-  { name: 'China', flag: '🇨🇳' },
-  { name: 'Japan', flag: '🇯🇵' },
-  { name: 'Russia', flag: '🇷🇺' },
-  { name: 'Europe', flag: '🇪🇺' },
-  { name: 'Other', flag: '🌍' },
+  { name: 'China Support Office', flag: '🇨🇳' },
+  { name: 'China Support Office', flag: '🇨🇳' },
+  { name: 'Japan Support Office', flag: '🇯🇵' },
+  { name: 'Russia Support Office', flag: '🇷🇺' },
+  { name: 'Europe Support Office', flag: '🇪🇺' },
+  { name: 'Other National Support Offices', flag: '🌍' },
 ];
 
 const OrganizationSection = () => {
@@ -301,38 +301,40 @@ const OrganizationSection = () => {
 
           {/* National Support Offices */}
           <motion.div variants={cardVariants} className="mb-8">
-            <div className="bg-gradient-to-r from-gold/10 via-gold/20 to-gold/10 border border-gold/20 rounded-xl py-3 px-6 text-center backdrop-blur-sm mb-8">
+            <div className="bg-gradient-to-r from-sky/20 via-sky/30 to-sky/20 border border-sky/30 rounded-xl py-3 px-6 text-center backdrop-blur-sm mb-8">
               <div className="flex items-center justify-center gap-2">
-                <Globe className="w-5 h-5 text-gold" />
+                <Globe className="w-5 h-5 text-sky" />
                 <h4 className="font-display text-lg md:text-xl text-ice tracking-wider">
-                  NATIONAL SUPPORT OFFICES
+                  NATIONAL SUPPORT OFFICES <span className="text-ice/60 font-sans text-sm">(Non-Representative)</span>
                 </h4>
               </div>
             </div>
 
             {/* Support Office Cards */}
-            <div className="grid grid-cols-3 md:grid-cols-6 gap-3">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
               {supportOffices.map((office, index) => (
                 <motion.div
                   key={index}
                   variants={cardVariants}
                   whileHover={{ scale: 1.05 }}
-                  className="bg-ice/5 backdrop-blur-sm border border-ice/10 rounded-lg p-4 text-center hover:border-gold/30 hover:bg-ice/10 transition-all duration-300"
+                  className="bg-ice/5 backdrop-blur-sm border border-ice/10 rounded-lg p-4 text-center hover:border-sky/30 hover:bg-ice/10 transition-all duration-300"
                 >
                   <span className="text-2xl mb-2 block">{office.flag}</span>
-                  <p className="text-ice/80 text-xs font-medium">{office.name}</p>
+                  <p className="text-ice text-xs font-medium">{office.name}</p>
                 </motion.div>
               ))}
             </div>
           </motion.div>
 
           {/* Footer Note */}
-          <motion.p
-            variants={cardVariants}
-            className="text-center text-ice/40 text-xs max-w-3xl mx-auto"
-          >
-            N/Firm indicates outsourced or contracted services. Overseas partners are collaborative entities, not direct employees.
-          </motion.p>
+          <motion.div variants={cardVariants} className="text-center max-w-4xl mx-auto space-y-2">
+            <p className="text-ice/50 text-xs italic">
+              All authority, representation, contracts, and financial control are exclusively vested in ISC Headquarters (USA).
+            </p>
+            <p className="text-ice/50 text-xs italic">
+              National Support Offices perform administrative and support functions only, with no representative or contractual authority.
+            </p>
+          </motion.div>
         </motion.div>
       </div>
     </section>
